@@ -34,6 +34,9 @@ class ChecklistViewController: UITableViewController, ItemDetailViewControllerDe
         
         configureText(for: cell, with: item)
         configureCheckmark(for: cell, with: item)
+//        if item.hasDueDate()  {
+//            cell.detailTextLabel!.text = "\(item.dueDate)"
+//        }
         return cell
     }
     
@@ -71,7 +74,7 @@ class ChecklistViewController: UITableViewController, ItemDetailViewControllerDe
     func configureText(for cell: UITableViewCell, with item: ChecklistItem) {
         let label = cell.viewWithTag(1000) as! UILabel
         //label.text = item.text
-        label.text = "\(item.itemID): \(item.text) "
+        label.text = "\(item.text) "
     }
     
     func itemDetailViewControllerDidCancel(_ controller: ItemDetailViewController) {
